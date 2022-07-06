@@ -1,5 +1,6 @@
-import './App.scss';
 import './Layout.scss';
+import './App.scss';
+
 import {
     BrowserRouter,
     Routes,
@@ -11,10 +12,9 @@ import Back from './Components/Back/Back';
 function App() {
   return (
     <BrowserRouter>
-    
-    <Routes>
+    <Routes> 
         <Route path="/" element={<Front/>} />
-        <Route path="/admin" element={<Back show="admin"/>} />
+        <Route path="/admin" element={<Back show="admin"/>} /> 
         <Route path="/admin/authors" element={<Back show="authors"/>} />
         <Route path="/admin/books" element={<Back show="books"/>} />
     </Routes>

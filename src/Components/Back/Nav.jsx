@@ -1,0 +1,37 @@
+import { NavLink } from "react-router-dom";
+
+function Nav() {
+
+    return (
+        <>
+            <section className="container">
+                <div className="row">
+                    <div className="col-12">
+                        <nav className="nav">
+                            <NavLink to="/admin/" className="nav-link" style={
+                                ({ isActive }) =>
+                                    isActive ? {
+                                        color: 'crimson'
+                                    } : null
+                            }>Admin</NavLink>
+                            <NavLink to="/admin/authors" className="nav-link" style={
+                                ({ isActive }) =>
+                                    isActive ? {
+                                        color: 'crimson'
+                                    } : null
+                            }>Authors</NavLink>
+                            <NavLink to="/admin/books" className="nav-link" style={
+                                ({ isActive }) =>
+                                    isActive ? {
+                                        color: 'crimson'
+                                    } : null
+                            }>Books</NavLink>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+        </>
+    )
+}
+
+export default Nav;
