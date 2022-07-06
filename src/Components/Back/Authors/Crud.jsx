@@ -1,17 +1,18 @@
-import Nav from "../Nav"
-import Create from "./Create"
-import Edit from "./Edit"
-import List from "./List"
+import Nav from "../Nav";
+import Create from "./Create";
+import Edit from "./Edit";
+import List from "./List";
+
 
 function AuthorsCrud() {
-
-    return (
-        <>
-        <Nav/>
+  return (
+    <>
+   
+        <Nav />
         <Create/>
-        <List/>
-        <Edit/>
-</>
-    )
+        <List />
+        <Edit></Edit>
+    </>
+  );
 }
-export default AuthorsCrud
+export default AuthorsCrud;

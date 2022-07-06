@@ -1,5 +1,7 @@
 import './Layout.scss';
+import './crud.scss';
 import './App.scss';
+
 
 import {
     BrowserRouter,

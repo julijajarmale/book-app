@@ -12,19 +12,18 @@ function List() {
 
     return (
 
-        <section className="container">
+        <div className="container">
         <div className="row">
-          <div className="col-12 col-lg-6">
-         <h2>List of Authors</h2>
+          <div className="col-12">
+         <h2>Authors</h2>
                 <ul className="list-group">
                     {
                    authors? authors.map(author => <Author key={author.id} author={author}></Author>) : null
                     }
                 </ul>
-            
-          </div>
-        </div>
-      </section>
+                </div>
+                </div>
+      </div>
   
 
 

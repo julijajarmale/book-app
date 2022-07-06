@@ -4,14 +4,14 @@ function Nav() {
 
     return (
         <>
-            <section className="container">
+            <div className="container header">
                 <div className="row">
                     <div className="col-12">
                         <nav className="nav">
                             <NavLink to="/admin/" className="nav-link" style={
                                 ({ isActive }) =>
                                     isActive ? {
-                                        color: 'crimson'
+                                        className: "a-active"
                                     } : null
                             }>Admin</NavLink>
                             <NavLink to="/admin/authors" className="nav-link" style={
@@ -29,7 +29,7 @@ function Nav() {
                         </nav>
                     </div>
                 </div>
-            </section>
+            </div>
         </>
     )
 }
