@@ -17,6 +17,8 @@ function Back({show}) {
     const [editAuthor, setEditAuthor] = useState(null)
     const [modalAuthor, setModalAuthor] = useState(null)
 
+    const [createBooks, setCreateBooks] = useState(null)
+
 
     
 
@@ -37,6 +39,18 @@ useEffect(() => {
     })
     
 }, [createAuthor]);
+
+
+//CREATE BOOKS
+
+useEffect(() => {
+    if (null === createBooks) return;
+    axios.post('http://localhost:3003/admin/books', createBooks)
+    .then(res => {
+        setLastUpdate(Date.now());
+    })
+    
+}, [createBooks]);
 
 
 //DELETE AUTHOR
@@ -68,7 +82,8 @@ useEffect(() => {
             setDeleteAuthor,
             setEditAuthor,
             modalAuthor,
-            setModalAuthor
+            setModalAuthor,
+            setCreateBooks
            
         }}>
               {
@@ -77,7 +92,6 @@ useEffect(() => {
                     
                     <Nav/>
             
-                    <h1>BACK</h1>
                     </>
                     : show === 'authors' ? <AuthorsCrud/>: 
                         show === 'books' ? <BooksCrud/> : null

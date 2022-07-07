@@ -1,4 +1,5 @@
 import Nav from "../Nav"
+import Create from "./Create"
 
 
 function BooksCrud() {
@@ -6,6 +7,7 @@ function BooksCrud() {
     return (
         <>
      <Nav/>
+     <Create/>
         </>
     )
 }
