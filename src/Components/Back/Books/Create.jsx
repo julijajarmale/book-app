@@ -3,7 +3,7 @@ import { useState } from "react";
 import BackContext from "../BackContext";
 
 function Create() {
-  const { authors, setCreateBooks } = useContext(BackContext);
+  const { authors, setCreateBook } = useContext(BackContext);
 
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
@@ -18,7 +18,7 @@ function Create() {
       inStock: inStock ? 1 : 0, 
       author: parseInt(author),
      };
-    setCreateBooks(data);
+    setCreateBook(data);
     setTitle("");
     setPrice("");
     setInStock(false);

@@ -17,7 +17,9 @@ function Back({show}) {
     const [editAuthor, setEditAuthor] = useState(null)
     const [modalAuthor, setModalAuthor] = useState(null)
 
-    const [createBooks, setCreateBooks] = useState(null)
+    const [books, setBooks] = useState(null)
+    const [createBook, setCreateBook] = useState(null)
+    const [deleteBook, setDeleteBook] = useState(null)
 
 
     
@@ -28,6 +30,11 @@ function Back({show}) {
         .then(res => setAuthors(res.data));
 }, [lastUpdate]);
 
+//READ BOOKS 
+useEffect(() => {
+    axios.get('http://localhost:3003/admin/books')
+        .then(res => setBooks(res.data));
+}, [lastUpdate]);
 
 //CREATE AUTHOR
 
@@ -44,13 +51,13 @@ useEffect(() => {
 //CREATE BOOKS
 
 useEffect(() => {
-    if (null === createBooks) return;
-    axios.post('http://localhost:3003/admin/books', createBooks)
+    if (null === createBook) return;
+    axios.post('http://localhost:3003/admin/books', createBook)
     .then(res => {
         setLastUpdate(Date.now());
     })
     
-}, [createBooks]);
+}, [createBook]);
 
 
 //DELETE AUTHOR
@@ -63,6 +70,16 @@ useEffect(() => {
         })
     
 }, [deleteAuthor]);
+
+//DELETE BOOKS
+useEffect(() => {
+    if (null === deleteBook) return;
+    axios.delete('http://localhost:3003/admin/books/' + deleteBook.id)
+        .then(res => {
+            setLastUpdate(Date.now());
+        })
+    
+}, [deleteBook]);
 
 // EDIT AUTHOR
     useEffect(() => {
@@ -83,7 +100,9 @@ useEffect(() => {
             setEditAuthor,
             modalAuthor,
             setModalAuthor,
-            setCreateBooks
+            setCreateBook,
+            books,
+            setDeleteBook,
            
         }}>
               {
