@@ -74,11 +74,9 @@ useEffect(() => {
               {
                 show === 'admin' ?
                     <>
-                    <header>
+                    
                     <Nav/>
-                    </header>
-                   
-                        
+            
                     <h1>BACK</h1>
                     </>
                     : show === 'authors' ? <AuthorsCrud/>: 

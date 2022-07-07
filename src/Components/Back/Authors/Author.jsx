@@ -16,29 +16,20 @@ function Author({author}) {
 
     return (
 
-        <section className="container">
-        <div className="row">
-          <div className="col-12 col-lg-6">
-          <li className="list-group-item">
-            <div className="item">
+          <li className="list-item">
+            
                 <div className="content">
-                    <b>{author.name}</b>
-                    <i>{author.surname}</i>
+                    <span className="item">{author.name}</span>
+                    <span className="item">{author.surname}</span>
                 </div>
                 <div className="buttons">
-                    <button type="button" className="btn" onClick={handleEdit}>Edit</button>
-                    <button type="button" className="btn" onClick={handleDelete}>Delete</button>
+                    <button type="button" className="buttons btn2" onClick={handleEdit}>Edit</button>
+                    <button type="button" className="buttons btn3" onClick={handleDelete}>Delete</button>
                 </div>
-            </div>
+            
             </li>
-          </div>
-        </div>
-      </section>
-  
+        
 
-
-
-       
     );
 }
 

@@ -11,7 +11,7 @@ function Nav() {
                             <NavLink to="/admin/" className="nav-link" style={
                                 ({ isActive }) =>
                                     isActive ? {
-                                        className: "a-active"
+                                        color: 'crimson'
                                     } : null
                             }>Admin</NavLink>
                             <NavLink to="/admin/authors" className="nav-link" style={
