@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from "react";
+import setDateFormat from "../../../Functions/setDateFormat";
 import BackContext from "../BackContext";
 
 function Edit() {
@@ -8,6 +9,7 @@ function Edit() {
   const [price, setPrice] = useState("");
   const [inStock, setInStock] = useState(false);
   const [author, setAuthor] = useState("");
+  const [date, setDate] = useState("");
 
   useEffect(() => {
     if (null === modalBook) {
@@ -18,17 +20,23 @@ function Edit() {
     setPrice(modalBook.price);
     setInStock(modalBook.in_stock ? true : false);
     setAuthor(authors.filter(a => a.title === modalBook.author)[0].id);
+    setDate(setDateFormat(modalBook.date) === setDateFormat(Date))
+  
 
   }, [modalBook, authors]);
 
   const handleEdit = () => {
     console.log("suveike");
+    console.log(modalBook.date)
+    console.log(date)
+    
     const data = {
             title,
             id: modalBook.id,
             in_stock: inStock ? 1 : 0,
             price: parseFloat(price),
             author: parseInt(author),
+            date: date
          };
   
     setEditBook(data);
@@ -90,7 +98,15 @@ function Edit() {
                             </select>
                             <small className="form-text text-muted">Select author here.</small>
                         </div>
-
+<div className="form-row">
+              <input
+                type="datetime-local"
+                placeholder="Enter Publish Date"
+                className="form-control"
+                onChange={(e) => setDate(e.target.value)}
+                value={date}
+              />
+      </div>
             <div className="modal-footer">
               <button
                 type="button"

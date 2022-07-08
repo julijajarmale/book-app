@@ -12,6 +12,7 @@ function Author({book}) {
 
     const handleEdit =() => {
       setModalBook(book)
+
     }
 
     return (
