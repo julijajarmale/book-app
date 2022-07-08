@@ -1,5 +1,6 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { useState } from "react";
+import getBase64 from "../../../Functions/getBase64";
 import setDateFormat from "../../../Functions/setDateFormat";
 import BackContext from "../BackContext";
 
@@ -11,22 +12,35 @@ function Create() {
   const [inStock, setInStock] = useState(false);
   const [author, setAuthor] = useState("");
   const [date, setDate] = useState("");
-  
+  const fileInput = useRef();
+
+    const [bookCover, setBookCover] = useState(null);
 //
+
+const doPhoto = () => {
+  getBase64(fileInput.current.files[0])
+  .then(photo => setBookCover(photo))
+  .catch(_ => {
+      // tylim
+  })
+}
   const handleCreate = () => {
     const data = { 
       title,
       price: parseFloat(price),
       inStock: inStock ? 1 : 0, 
       author: parseInt(author),
-      date: date
+      date: date,
+      photo: bookCover
      };
     setCreateBook(data);
     setTitle("");
     setPrice("");
     setInStock(false);
     setAuthor('0');
-    setDate(setDateFormat)
+    setDate(setDateFormat);
+    setBookCover(null);
+    fileInput.current.value = null;
   };
 
   return (
@@ -82,6 +96,14 @@ function Create() {
                     </select>
                 
                 </div>
+                <div className="form-row">
+                    <label>Photo</label>
+                    <input ref={fileInput} type="file" className="form-control" onChange={doPhoto}/>
+                    <small className="form-text text-muted">Upload Photo.</small>
+                </div>
+                {
+                    bookCover ? <div className="photo-bin"><img src={bookCover} alt="nice"/></div> : null
+                }
             <button
               type="button"
               className="btn"

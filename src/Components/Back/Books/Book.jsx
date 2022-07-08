@@ -26,6 +26,11 @@ function Author({book}) {
                     <span className="item">{book.authorname} {book.authorsurname}</span>
                     <span className="item">{new Date(Date.parse(book.date)).toLocaleString()}</span>
                 </div>
+                <div className="item">
+                {
+                        book.photo ? <div className="photo-bin"><img src={book.photo} alt={book.title} /></div> : null
+                    }
+                    </div>
                 <div className="buttons">
                     <button type="button" className="buttons btn2" onClick={handleEdit}>Edit</button>
                     <button type="button" className="buttons btn3" onClick={handleDelete}>Delete</button>
