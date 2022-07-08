@@ -20,6 +20,8 @@ function Back({show}) {
     const [books, setBooks] = useState(null)
     const [createBook, setCreateBook] = useState(null)
     const [deleteBook, setDeleteBook] = useState(null)
+    const [editBook, setEditBook] = useState(null)
+    const [modalBook, setModalBook] = useState(null)
 
 
     
@@ -91,6 +93,16 @@ useEffect(() => {
            
     }, [editAuthor]);
 
+    // EDIT BOOK
+    useEffect(() => {
+        if (null === editBook) return;
+        axios.put('http://localhost:3003/admin/books/' + editBook.id, editBook)
+            .then(res => {
+                setLastUpdate(Date.now());
+            })
+           
+    }, [editBook]);
+
 
     return (
         <BackContext.Provider value={{
@@ -103,6 +115,10 @@ useEffect(() => {
             setCreateBook,
             books,
             setDeleteBook,
+            setEditBook,
+            setModalBook,
+            modalBook
+
            
         }}>
               {
