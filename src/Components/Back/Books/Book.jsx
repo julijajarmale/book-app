@@ -23,6 +23,7 @@ function Author({book}) {
                     <span className="item">{book.price}</span>
                     <span className="item">{book.price.toFixed(2)}</span>
                     <span className="item">{book.authorname} {book.authorsurname}</span>
+                    <span className="item">{new Date(Date.parse(book.date)).toLocaleString()}</span>
                 </div>
                 <div className="buttons">
                     <button type="button" className="buttons btn2" onClick={handleEdit}>Edit</button>

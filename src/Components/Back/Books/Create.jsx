@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useState } from "react";
+import setDateFormat from "../../../Functions/setDateFormat";
 import BackContext from "../BackContext";
 
 function Create() {
@@ -9,6 +10,7 @@ function Create() {
   const [price, setPrice] = useState("");
   const [inStock, setInStock] = useState(false);
   const [author, setAuthor] = useState("");
+  const [date, setDate] = useState("");
   
 //
   const handleCreate = () => {
@@ -17,12 +19,14 @@ function Create() {
       price: parseFloat(price),
       inStock: inStock ? 1 : 0, 
       author: parseInt(author),
+      date: date
      };
     setCreateBook(data);
     setTitle("");
     setPrice("");
     setInStock(false);
     setAuthor('0');
+    setDate(setDateFormat)
   };
 
   return (
@@ -48,6 +52,17 @@ function Create() {
                 className="form-control"
                 onChange={(e) => setPrice(e.target.value)}
                 value={price}
+              />
+      
+            </div>
+
+            <div className="form-row">
+              <input
+                type="datetime-local"
+                placeholder="Enter Publish Date"
+                className="form-control"
+                onChange={(e) => setDate(e.target.value)}
+                value={date}
               />
       
             </div>
