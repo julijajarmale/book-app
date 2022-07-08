@@ -26,7 +26,7 @@ function Author({book}) {
                     <span className="item">{book.authorname} {book.authorsurname}</span>
                     <span className="item">{new Date(Date.parse(book.date)).toLocaleString()}</span>
                 </div>
-                <div className="item">
+                <div className="item book-cover">
                 {
                         book.photo ? <div className="photo-bin"><img src={book.photo} alt={book.title} /></div> : null
                     }

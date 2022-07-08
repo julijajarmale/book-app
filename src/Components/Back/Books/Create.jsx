@@ -13,8 +13,7 @@ function Create() {
   const [author, setAuthor] = useState("");
   const [date, setDate] = useState("");
   const fileInput = useRef();
-
-    const [bookCover, setBookCover] = useState(null);
+  const [bookCover, setBookCover] = useState(null);
 //
 
 const doPhoto = () => {

@@ -125,8 +125,14 @@
       
         width: 30%;
         margin-left: 10px;
+       
       }
-
+      .book-cover{
+        img {
+          width: 100%;
+          height: auto;
+      }
+           }
       .btn2 {
         align-items: center;
         background-color: white;
@@ -192,5 +198,6 @@
         margin-left: 5px;
       }
     }
+ 
   
 
