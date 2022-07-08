@@ -34,7 +34,7 @@ function Edit() {
     setInStock(modalBook.in_stock ? true : false);
     setAuthor(authors.filter((a) => a.title === modalBook.author)[0].id);
     setDate(setDateFormat(modalBook.date) === setDateFormat(Date));
-    setBookCover(modalBook.bookCover);
+    setBookCover(modalBook.photo);
   }, [modalBook, authors]);
 
   const handleEdit = () => {
