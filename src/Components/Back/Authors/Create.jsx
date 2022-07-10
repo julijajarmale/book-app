@@ -1,6 +1,8 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { useState } from "react";
+import getBase64 from "../../../Functions/getBase64";
 import BackContext from "../BackContext";
+import AuthorLogo from "./AuthorImage";
 
 function Create() {
   const { setCreateAuthor } = useContext(BackContext);
@@ -8,8 +10,22 @@ function Create() {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
 
+  const fileInput = useRef();
+  const [authorPicture, setAuthorPicture] = useState(null);
+
+  const doPhoto = () => {
+    getBase64(fileInput.current.files[0])
+    .then(picture => setAuthorPicture(picture))
+    .catch(_ => {
+        // tylim
+    })
+  }
   const handleCreate = () => {
-    const data = { name, surname };
+    const data = { 
+      name, 
+      surname,
+      picture: authorPicture
+     };
     setCreateAuthor(data);
     setName("");
     setSurname("");
@@ -18,7 +34,7 @@ function Create() {
   return (
     <div className="container author-container">
       <div className="row">
-        <div className="col-5">
+        <div className="col-4 ml-1">
           <form className="form">
             <h2>Add new Author</h2>
             <div className="form-row">
@@ -41,7 +57,14 @@ function Create() {
               />
       
             </div>
-
+            <div className="form-row">
+                    <label>Photo</label>
+                    <input ref={fileInput} type="file" className="form-control" onChange={doPhoto}/>
+                    <small className="form-text text-muted">Upload Photo.</small>
+                </div>
+                {
+                    authorPicture ? <div className="photo-bin"><img src={authorPicture} alt="nice"/></div> : null
+                }
             <button
               type="button"
               className="btn"
@@ -50,6 +73,9 @@ function Create() {
               Create
             </button>
           </form>
+        </div>
+        <div className="col-6 ml-1">
+<AuthorLogo/>
         </div>
       </div>
     </div>

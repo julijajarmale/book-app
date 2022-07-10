@@ -22,6 +22,11 @@ function Author({author}) {
                     <span className="item">{author.name}</span>
                     <span className="item">{author.surname}</span>
                 </div>
+                <div className="item book-cover">
+                {
+                        author.picture ? <div className="photo-bin"><img src={author.picture} alt={author.name} /></div> : null
+                    }
+                    </div>
                 <div className="buttons">
                     <button type="button" className="buttons btn2" onClick={handleEdit}>Edit</button>
                     <button type="button" className="buttons btn3" onClick={handleDelete}>Delete</button>

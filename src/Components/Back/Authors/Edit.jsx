@@ -1,4 +1,5 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext, useRef } from "react";
+import getBase64 from "../../../Functions/getBase64";
 import BackContext from "../BackContext";
 
 function Edit() {
@@ -6,6 +7,16 @@ function Edit() {
 
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
+  const fileInput = useRef();
+  const [authorPicture, setAuthorPicture] = useState(null);
+
+  const doPhoto = () => {
+    getBase64(fileInput.current.files[0])
+      .then((photo) => setAuthorPicture(photo))
+      .catch((_) => {
+        // tylim
+      });
+  };
 
   useEffect(() => {
     if (null === modalAuthor) {
@@ -14,12 +25,17 @@ function Edit() {
 
     setName(modalAuthor.name);
     setSurname(modalAuthor.surname);
+    setAuthorPicture(modalAuthor.picture);
 
   }, [modalAuthor]);
 
   const handleEdit = () => {
     console.log("suveike");
-    const data = { name, surname, id: modalAuthor.id };
+    const data = { 
+      name, 
+      surname,
+      picture: authorPicture,
+      id: modalAuthor.id };
   
     setEditAuthor(data);
     setModalAuthor(null);
@@ -66,6 +82,16 @@ function Edit() {
                 Enter Authors surname here.
               </small>
             </div>
+            <div className="form-row">
+        <label>Photo</label>
+        <input
+          ref={fileInput}
+          type="file"
+          className="form-control"
+          onChange={doPhoto}
+        />
+        <small className="form-text text-muted">Upload Photo.</small>
+      </div>
 
             <div className="modal-footer">
               <button

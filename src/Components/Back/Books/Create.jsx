@@ -3,6 +3,7 @@ import { useState } from "react";
 import getBase64 from "../../../Functions/getBase64";
 import setDateFormat from "../../../Functions/setDateFormat";
 import BackContext from "../BackContext";
+import BooksLogo from "./BooksImage";
 
 function Create() {
   const { authors, setCreateBook } = useContext(BackContext);
@@ -45,7 +46,7 @@ const doPhoto = () => {
   return (
     <div className="container author-container">
       <div className="row">
-        <div className="col-5">
+        <div className="col-4 ml-1">
           <form className="form">
             <h2>Add new Book</h2>
             <div className="form-row">
@@ -111,6 +112,9 @@ const doPhoto = () => {
               Create
             </button>
           </form>
+        </div>
+        <div className="col-6 ml-1">
+          <BooksLogo/>
         </div>
       </div>
     </div>
