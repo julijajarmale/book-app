@@ -17,18 +17,18 @@ function Author({book}) {
 
     return (
 
-          <li className="list-item">
+          <li className="book-list-item">
             
                 <div className="content">
-                    <span className="item">{book.title}</span>
-                    <span className="item">{book.price}</span>
-                    <span className="item">{book.price.toFixed(2)}</span>
-                    <span className="item">{book.authorname} {book.authorsurname}</span>
-                    <span className="item">{new Date(Date.parse(book.date)).toLocaleString()}</span>
+                    <span className="book-item">{book.title}</span>
+                    <span className="book-item">{book.price}</span>
+                    <span className="book-item">{book.price.toFixed(2)}</span>
+                    <span className="book-item">{book.authorname} {book.authorsurname}</span>
+                    <span className="book-item">{new Date(Date.parse(book.date)).toLocaleString()}</span>
                 </div>
-                <div className="item book-cover">
+                <div className="book-item">
                 {
-                        book.photo ? <div className="photo-bin"><img src={book.photo} alt={book.title} /></div> : null
+                        book.photo ? <div className="book-cover"><img src={book.photo} alt={book.title} /></div> : null
                     }
                     </div>
                 <div className="buttons">

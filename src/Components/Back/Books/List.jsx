@@ -7,12 +7,12 @@ function List() {
   const { books } = useContext(BackContext);
 
   return (
-    <div className="container list-container">
+    <div className="container book-list-container">
       <div className="row">
-        <div className="col-12 list-form">
+        <div className="col-12">
           <h2>List of Books</h2>
-          <div className="list-group">
-          <ul className="list-group-item">
+          <div className="book-list-group">
+          <ul className="book-list">
             {books
               ? books.map((book) => (
                   <Book key={book.id} book={book}></Book>

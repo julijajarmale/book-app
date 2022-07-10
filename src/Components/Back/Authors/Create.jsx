@@ -40,7 +40,7 @@ function Create() {
             <div className="form-row">
               <input
                 type="text"
-                className="form-control"
+                className="input"
                 placeholder="Enter Authors Name"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
@@ -51,16 +51,15 @@ function Create() {
               <input
                 type="text"
                 placeholder="Enter Authors Surname"
-                className="form-control"
+                className="input"
                 onChange={(e) => setSurname(e.target.value)}
                 value={surname}
               />
       
             </div>
             <div className="form-row">
-                    <label>Photo</label>
-                    <input ref={fileInput} type="file" className="form-control" onChange={doPhoto}/>
-                    <small className="form-text text-muted">Upload Photo.</small>
+                    <label>Upload Authors Profile Picture</label>
+                    <input ref={fileInput} type="file" className="input" onChange={doPhoto}/>
                 </div>
                 {
                     authorPicture ? <div className="photo-bin"><img src={authorPicture} alt="nice"/></div> : null

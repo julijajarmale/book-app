@@ -33,7 +33,7 @@ function Edit() {
     setPrice(modalBook.price);
     setInStock(modalBook.in_stock ? true : false);
     setAuthor(authors.filter((a) => a.title === modalBook.author)[0].id);
-    setDate(setDateFormat(modalBook.date));
+    setDate(setDateFormat(modalBook.date) === setDateFormat(Date));
     setBookCover(modalBook.photo);
   }, [modalBook, authors]);
 
@@ -75,7 +75,7 @@ function Edit() {
           <label>Name</label>
           <input
             type="text"
-            className="form-control"
+            className="input"
             onChange={(e) => setTitle(e.target.value)}
             value={title}
           />
@@ -85,7 +85,7 @@ function Edit() {
           <label>Price</label>
           <input
             type="text"
-            className="form-control"
+            className="input"
             onChange={(e) => setPrice(e.target.value)}
             value={price}
           />
@@ -125,7 +125,7 @@ function Edit() {
           <input
             type="datetime-local"
             placeholder="Enter Publish Date"
-            className="form-control"
+            className="input"
             onChange={(e) => setDate(e.target.value)}
             value={date}
           />
