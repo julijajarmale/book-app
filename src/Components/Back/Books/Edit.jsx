@@ -33,7 +33,7 @@ function Edit() {
     setPrice(modalBook.price);
     setInStock(modalBook.in_stock ? true : false);
     setAuthor(authors.filter((a) => a.title === modalBook.author)[0].id);
-    setDate(setDateFormat(modalBook.date) === setDateFormat(Date));
+    setDate(setDateFormat(modalBook.date));
     setBookCover(modalBook.photo);
   }, [modalBook, authors]);
 
@@ -63,35 +63,34 @@ function Edit() {
   return (
     <div className="modal">
       <div className="modal-header">
-        <h5 className="modal-title">Edit Author</h5>
+        <h2 className="modal-title">Edit Book Information</h2>
         <button
           type="button"
           className="close"
           onClick={() => setModalBook(null)}
         ></button>
       </div>
-      <div className="modal-body">
-        <div className="form-group">
-          <label>Name</label>
+      <div className="form modal-body">
+        <div className="form-row">
+          <label>Update Book Title</label>
           <input
             type="text"
             className="input"
             onChange={(e) => setTitle(e.target.value)}
             value={title}
           />
-          <small className="form-text text-muted">Enter Book title here.</small>
         </div>
-        <div className="form-group">
-          <label>Price</label>
+        <div className="form-row">
+          <label>Update Book Price</label>
           <input
             type="text"
             className="input"
             onChange={(e) => setPrice(e.target.value)}
             value={price}
           />
-          <small className="form-text text-muted">Enter Book price here.</small>
         </div>
-        <div className="form-group form-check">
+        <div className="form-row form-check">
+          <label>In Stock?</label>
           <input
             type="checkbox"
             className="form-check-input"
@@ -99,12 +98,11 @@ function Edit() {
             checked={inStock}
             onChange={() => setInStock((i) => !i)}
           />
-          <label className="form-check-label" htmlFor="in--stock--modal">
-            Check me out
-          </label>
+         
+          
         </div>
-        <div className="form-group">
-          <label>Author</label>
+        <div className="form-row">
+          <label>Select Author</label>
           <select
             className="form-control"
             onChange={(e) => setAuthor(e.target.value)}
@@ -119,12 +117,12 @@ function Edit() {
                 ))
               : null}
           </select>
-          <small className="form-text text-muted">Select author here.</small>
+        
         </div>
         <div className="form-row">
           <input
             type="datetime-local"
-            placeholder="Enter Publish Date"
+            placeholder="Update Publish Date"
             className="input"
             onChange={(e) => setDate(e.target.value)}
             value={date}
@@ -132,11 +130,11 @@ function Edit() {
         </div>
       </div>
       <div className="form-row">
-        <label>Photo</label>
+        <label>Update Book cover</label>
         <input
           ref={fileInput}
           type="file"
-          className="form-control"
+          className="input"
           onChange={doPhoto}
         />
         <small className="form-text text-muted">Upload Photo.</small>
@@ -152,14 +150,14 @@ function Edit() {
       <div className="modal-footer">
         <button
           type="button"
-          className="btn btn-outline-secondary"
+          className="btn btn2"
           onClick={() => setModalBook(null)}
         >
           Close
         </button>
         <button
           type="button"
-          className="btn btn-outline-primary"
+          className="btn btn3"
           onClick={handleEdit}
         >
           Save changes

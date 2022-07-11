@@ -49,7 +49,7 @@ function Edit() {
     <div className="modal">
       
           <div className="modal-header">
-            <h5 className="modal-title">Edit Author</h5>
+            <h2 className="modal-title">Edit Authors Information</h2>
             <button
               type="button"
               className="close"
@@ -58,52 +58,53 @@ function Edit() {
             </button>
           </div>
           <div className="modal-body">
-            <div className="form-group">
-              <label>Name</label>
+            <div className="form-row">
+              <label>Update Name</label>
               <input
                 type="text"
-                className="form-control"
+                className="form-row"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
               />
-              <small className="form-text text-muted">
-                Enter  authors name here.
-              </small>
             </div>
-            <div className="form-group">
-              <label>Surname</label>
+            <div className="form-row">
+              <label>Update Surname</label>
               <input
                 type="text"
-                className="form-control"
+                className="form-row"
                 onChange={(e) => setSurname(e.target.value)}
                 value={surname}
               />
-              <small className="form-text text-muted">
-                Enter Authors surname here.
-              </small>
+      
             </div>
             <div className="form-row">
-        <label>Photo</label>
+        <label>Add new Photo</label>
         <input
           ref={fileInput}
           type="file"
           className="form-control"
           onChange={doPhoto}
         />
-        <small className="form-text text-muted">Upload Photo.</small>
+       
       </div>
-
+      <div>
+        {authorPicture ? (
+          <div className="book-cover">
+            <img src={authorPicture} alt="nice" />
+          </div>
+        ) : null}
+      </div>
             <div className="modal-footer">
               <button
                 type="button"
-                className="btn btn-outline-secondary"
+                className="btn btn2"
                 onClick={() => setModalAuthor(null)}
               >
                 Close
               </button>
               <button
                 type="button"
-                className="btn btn-outline-primary"
+                className="btn btn3"
                 onClick={handleEdit}
               >
                 Save changes
