@@ -86,6 +86,7 @@ function Create() {
             </div>
 
             <div className="form-row">
+              <label>Enter Publish Date</label>
               <input
                 type="datetime-local"
                 placeholder="Enter Publish Date"
@@ -96,7 +97,9 @@ function Create() {
             </div>
 
             <div className="form-row">
-            <label className="form-text text-muted">Upload Cover Picture</label>
+              <label className="form-text text-muted">
+                Upload Cover Picture
+              </label>
               <input
                 ref={fileInput}
                 type="file"
@@ -110,7 +113,7 @@ function Create() {
               </div>
             ) : null}
             <div className="form-row input-check">
-            <label className="form-check-label" htmlFor="in--stock">
+              <label className="form-check-label" htmlFor="in--stock">
                 In stock
               </label>
               <input
@@ -127,9 +130,7 @@ function Create() {
           </form>
         </div>
         <div className="col-6 ml-1 ">
-          
-          <BooksLogo/>
-          
+          <BooksLogo />
         </div>
       </div>
     </div>

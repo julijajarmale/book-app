@@ -51,7 +51,7 @@ function Edit() {
       date: date,
       photo: bookCover,
     };
-
+console.log('data', data)
     setEditBook(data);
     setModalBook(null);
   };
@@ -98,8 +98,6 @@ function Edit() {
             checked={inStock}
             onChange={() => setInStock((i) => !i)}
           />
-         
-          
         </div>
         <div className="form-row">
           <label>Select Author</label>
@@ -117,8 +115,8 @@ function Edit() {
                 ))
               : null}
           </select>
-        
         </div>
+        <label>Update Publish Date</label>
         <div className="form-row">
           <input
             type="datetime-local"
@@ -155,11 +153,7 @@ function Edit() {
         >
           Close
         </button>
-        <button
-          type="button"
-          className="btn btn3"
-          onClick={handleEdit}
-        >
+        <button type="button" className="btn btn3" onClick={handleEdit}>
           Save changes
         </button>
       </div>

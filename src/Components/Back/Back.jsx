@@ -95,6 +95,7 @@ useEffect(() => {
 
     // EDIT BOOK
     useEffect(() => {
+        console.log(editBook)
         if (null === editBook) return;
         axios.put('http://localhost:3003/admin/books/' + editBook.id, editBook)
             .then(res => {
