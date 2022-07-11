@@ -4,6 +4,7 @@ import BackContext from './BackContext';
 import BooksCrud from './Books/Crud';
 import Nav from './Nav';
 import axios from 'axios';
+import {authConfig} from '../../Functions/auth';
 
 //import { v4 as uuidv4 } from 'uuid'
 
@@ -28,13 +29,13 @@ function Back({show}) {
 
 //READ AUTHOR 
   useEffect(() => {
-    axios.get('http://localhost:3003/admin/authors')
+    axios.get('http://localhost:3003/admin/authors', authConfig())
         .then(res => setAuthors(res.data));
 }, [lastUpdate]);
 
 //READ BOOKS 
 useEffect(() => {
-    axios.get('http://localhost:3003/admin/books')
+    axios.get('http://localhost:3003/admin/books', authConfig())
         .then(res => setBooks(res.data));
 }, [lastUpdate]);
 
@@ -42,7 +43,7 @@ useEffect(() => {
 
 useEffect(() => {
     if (null === createAuthor) return;
-    axios.post('http://localhost:3003/admin/authors', createAuthor)
+    axios.post('http://localhost:3003/admin/authors', createAuthor, authConfig())
     .then(res => {
         setLastUpdate(Date.now());
     })
@@ -54,7 +55,7 @@ useEffect(() => {
 
 useEffect(() => {
     if (null === createBook) return;
-    axios.post('http://localhost:3003/admin/books', createBook)
+    axios.post('http://localhost:3003/admin/books', createBook, authConfig())
     .then(res => {
         setLastUpdate(Date.now());
     })
@@ -66,7 +67,7 @@ useEffect(() => {
 
 useEffect(() => {
     if (null === deleteAuthor) return;
-    axios.delete('http://localhost:3003/admin/authors/' + deleteAuthor.id)
+    axios.delete('http://localhost:3003/admin/authors/' + deleteAuthor.id, authConfig())
         .then(res => {
             setLastUpdate(Date.now());
         })
@@ -76,7 +77,7 @@ useEffect(() => {
 //DELETE BOOKS
 useEffect(() => {
     if (null === deleteBook) return;
-    axios.delete('http://localhost:3003/admin/books/' + deleteBook.id)
+    axios.delete('http://localhost:3003/admin/books/' + deleteBook.id, authConfig())
         .then(res => {
             setLastUpdate(Date.now());
         })
@@ -86,7 +87,7 @@ useEffect(() => {
 // EDIT AUTHOR
     useEffect(() => {
         if (null === editAuthor) return;
-        axios.put('http://localhost:3003/admin/authors/' + editAuthor.id, editAuthor)
+        axios.put('http://localhost:3003/admin/authors/' + editAuthor.id, editAuthor, authConfig())
             .then(res => {
                 setLastUpdate(Date.now());
             })
@@ -97,7 +98,7 @@ useEffect(() => {
     useEffect(() => {
         console.log(editBook)
         if (null === editBook) return;
-        axios.put('http://localhost:3003/admin/books/' + editBook.id, editBook)
+        axios.put('http://localhost:3003/admin/books/' + editBook.id, editBook, authConfig())
             .then(res => {
                 setLastUpdate(Date.now());
             })

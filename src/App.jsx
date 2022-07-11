@@ -21,9 +21,9 @@ function App() {
         <Route path="/" element={<RequireAuth role="user"><Front/></RequireAuth>} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/logout" element={<LogoutPage />} />
-        <Route path="/admin" element={<Back show="admin"/>} /> 
-        <Route path="/admin/authors" element={<Back show="authors"/>} />
-        <Route path="/admin/books" element={<Back show="books"/>} />
+        <Route path="/admin" element={<RequireAuth role="admin"><Back show="admin" /></RequireAuth>} /> 
+        <Route path="/admin/authors" element={<RequireAuth role="admin"><Back show="authors" /></RequireAuth>} />
+        <Route path="/admin/books" element={<RequireAuth role="admin"><Back show="books" /></RequireAuth>} />
     </Routes>
         
     </BrowserRouter>
