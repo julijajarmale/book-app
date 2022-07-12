@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import BackContext from "../BackContext";
+import StarRating from "./StarRating";
 
 function Author({ book }) {
   const { setDeleteBook, setModalBook } = useContext(BackContext);
@@ -37,6 +38,9 @@ function Author({ book }) {
           ) : (
             <div className="outofstock">Out of stock</div>
           )}
+        </span>
+        <span className="item">
+         <StarRating/>
         </span>
       </div>
 
