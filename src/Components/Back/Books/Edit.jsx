@@ -11,7 +11,7 @@ function Edit() {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [inStock, setInStock] = useState(false);
-  const [author, setAuthor] = useState("");
+  const [author, setAuthor] = useState('');
   const [date, setDate] = useState("");
   const fileInput = useRef();
   const [bookCover, setBookCover] = useState(null);
@@ -72,7 +72,7 @@ console.log('data', data)
       </div>
       <div className="form modal-body">
         <div className="form-row">
-          <label>Update Book Title</label>
+          <label>Update Book Title:</label>
           <input
             type="text"
             className="input"
@@ -81,7 +81,24 @@ console.log('data', data)
           />
         </div>
         <div className="form-row">
-          <label>Update Book Price</label>
+          <label>Select Author</label>
+          <select
+            className="input"
+            onChange={(e) => setAuthor(e.target.value)}
+            value={author}
+          >
+            <option value="0">Select Author</option>
+            {authors
+              ? authors.map((a) => (
+                  <option key={a.id} value={a.id}>
+                    {a.name} {a.surname}
+                  </option>
+                ))
+              : null}
+          </select>
+        </div>
+        <div className="form-row">
+          <label>Update Book Price:</label>
           <input
             type="text"
             className="input"
@@ -93,29 +110,13 @@ console.log('data', data)
           <label>In Stock?</label>
           <input
             type="checkbox"
-            className="form-check-input"
+            className="input-check"
             id="in--stock--modal"
             checked={inStock}
             onChange={() => setInStock((i) => !i)}
           />
         </div>
-        <div className="form-row">
-          <label>Select Author</label>
-          <select
-            className="form-control"
-            onChange={(e) => setAuthor(e.target.value)}
-            value={author}
-          >
-            <option value="0">Please, select your Cat</option>
-            {authors
-              ? authors.map((a) => (
-                  <option key={a.id} value={a.id}>
-                    {a.name} {a.surname}
-                  </option>
-                ))
-              : null}
-          </select>
-        </div>
+        
         <label>Update Publish Date</label>
         <div className="form-row">
           <input
@@ -132,7 +133,7 @@ console.log('data', data)
         <input
           ref={fileInput}
           type="file"
-          className="input"
+          className="book-cover"
           onChange={doPhoto}
         />
         <small className="form-text text-muted">Upload Photo.</small>
@@ -145,7 +146,7 @@ console.log('data', data)
         ) : null}
       </div>
 
-      <div className="modal-footer">
+      <div className="buttons">
         <button
           type="button"
           className="btn btn2"

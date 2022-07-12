@@ -5,6 +5,7 @@ import BooksCrud from './Books/Crud';
 import Nav from './Nav';
 import axios from 'axios';
 import {authConfig} from '../../Functions/auth';
+import Admin from './Admin';
 
 //import { v4 as uuidv4 } from 'uuid'
 
@@ -128,6 +129,7 @@ useEffect(() => {
                     <>
                     
                     <Nav/>
+                    <Admin/>
             
                     </>
                     : show === 'authors' ? <AuthorsCrud/>: 

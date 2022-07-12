@@ -3,7 +3,7 @@ import BackContext from "../BackContext";
 import Book from "./Book";
 
 
-function List() {
+function BooksList() {
   const { books } = useContext(BackContext);
 
   return (
@@ -26,4 +26,4 @@ function List() {
   );
 }
 
-export default List;
+export default BooksList;
