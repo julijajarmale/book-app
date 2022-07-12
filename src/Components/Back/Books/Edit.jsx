@@ -68,7 +68,7 @@ console.log('data', data)
           type="button"
           className="close"
           onClick={() => setModalBook(null)}
-        ></button>
+        >x</button>
       </div>
       <div className="form modal-body">
         <div className="form-row">
@@ -110,15 +110,15 @@ console.log('data', data)
           <label>In Stock?</label>
           <input
             type="checkbox"
-            className="input-check"
+            className="check"
             id="in--stock--modal"
             checked={inStock}
             onChange={() => setInStock((i) => !i)}
           />
         </div>
-        
+        <div className="form-row form-check">
         <label>Update Publish Date</label>
-        <div className="form-row">
+       
           <input
             type="datetime-local"
             placeholder="Update Publish Date"
@@ -127,16 +127,16 @@ console.log('data', data)
             value={date}
           />
         </div>
-      </div>
+        
+      
       <div className="form-row">
         <label>Update Book cover</label>
         <input
           ref={fileInput}
           type="file"
-          className="book-cover"
+          className="input"
           onChange={doPhoto}
         />
-        <small className="form-text text-muted">Upload Photo.</small>
       </div>
       <div>
         {bookCover ? (
@@ -145,6 +145,7 @@ console.log('data', data)
           </div>
         ) : null}
       </div>
+      
 
       <div className="buttons">
         <button
@@ -159,6 +160,8 @@ console.log('data', data)
         </button>
       </div>
     </div>
+    </div>
+    
   );
 }
 

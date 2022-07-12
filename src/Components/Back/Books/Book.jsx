@@ -22,13 +22,20 @@ function Author({ book }) {
             </div>
           ) : null}
         </div>
-        <span className="book-item">{book.title}</span>
+        <b className="book-item">{book.title}</b>
         <span className="book-item">
           {book.authorname} {book.authorsurname}
         </span>
         <span className="book-item">{book.price.toFixed(2)} € </span>
         <span className="book-item">
           Publish date: {new Date(Date.parse(book.date)).toLocaleString()}
+        </span>
+        <span className="item">
+          {book.in_stock ? (
+            <div className="instock">In Stock!</div>
+          ) : (
+            <div className="outofstock">Out of stock</div>
+          )}
         </span>
       </div>
 

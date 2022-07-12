@@ -97,7 +97,7 @@ function Create() {
             </div>
 
             <div className="form-row">
-              <label className="form-text text-muted">
+              <label>
                 Upload Cover Picture
               </label>
               <input
