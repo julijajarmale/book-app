@@ -15,6 +15,7 @@ function Create() {
   const [date, setDate] = useState("");
   const fileInput = useRef();
   const [bookCover, setBookCover] = useState(null);
+  const [description, setDescription] = useState(null);
   //
 
   const doPhoto = () => {
@@ -32,6 +33,7 @@ function Create() {
       author: parseInt(author),
       date: date,
       photo: bookCover,
+      description
     };
     setCreateBook(data);
     setTitle("");
@@ -41,6 +43,7 @@ function Create() {
     setDate(setDateFormat);
     setBookCover(null);
     fileInput.current.value = null;
+    setDescription("")
   };
 
   return (
@@ -82,6 +85,15 @@ function Create() {
                 className="input"
                 onChange={(e) => setPrice(e.target.value)}
                 value={price}
+              />
+            </div>
+            <div className="form-row">
+              <input
+                type="text"
+                placeholder="Enter Description"
+                className="input"
+                onChange={(e) => setDescription(e.target.value)}
+                value={description}
               />
             </div>
 

@@ -15,6 +15,7 @@ function Edit() {
   const [date, setDate] = useState("");
   const fileInput = useRef();
   const [bookCover, setBookCover] = useState(null);
+  const [description, setDescription] = useState('');
 
   const doPhoto = () => {
     getBase64(fileInput.current.files[0])
@@ -35,12 +36,11 @@ function Edit() {
     setAuthor(authors.filter((a) => a.title === modalBook.author)[0].id);
     setDate(setDateFormat(modalBook.date));
     setBookCover(modalBook.photo);
+    setDescription(modalBook.description);
   }, [modalBook, authors]);
 
   const handleEdit = () => {
-    console.log("suveike");
-    console.log(modalBook.date);
-    console.log(date);
+  
 
     const data = {
       title,
@@ -50,6 +50,7 @@ function Edit() {
       author: parseInt(author),
       date: date,
       photo: bookCover,
+      description
     };
 console.log('data', data)
     setEditBook(data);
@@ -106,6 +107,15 @@ console.log('data', data)
             value={price}
           />
         </div>
+        <div className="form-row">
+              <input
+                type="text"
+                placeholder="Update Description"
+                className="input"
+                onChange={(e) => setDescription(e.target.value)}
+                value={description}
+              />
+            </div>
         <div className="form-row form-check">
           <label>In Stock?</label>
           <input

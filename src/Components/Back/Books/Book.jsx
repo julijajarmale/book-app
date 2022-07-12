@@ -27,6 +27,7 @@ function Author({ book }) {
           {book.authorname} {book.authorsurname}
         </span>
         <span className="book-item">{book.price.toFixed(2)} € </span>
+        <span className="book-description">{book.description}</span>
         <span className="book-item">
           Publish date: {new Date(Date.parse(book.date)).toLocaleString()}
         </span>
