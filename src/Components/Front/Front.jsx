@@ -1,3 +1,5 @@
+
+import BooksSlider from './BooksSlider';
 import FrontContext from './FrontContext';
 import FrontNav from './Nav';
 
@@ -10,6 +12,8 @@ function Front() {
            
         }}>
            <FrontNav/>
+           <BooksSlider/>
+          
         </FrontContext.Provider>
     )
 }

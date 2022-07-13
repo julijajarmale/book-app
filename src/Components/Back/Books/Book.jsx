@@ -2,7 +2,7 @@ import { useContext } from "react";
 import BackContext from "../BackContext";
 import StarRating from "./StarRating";
 
-function Author({ book }) {
+function Book({ book }) {
   const { setDeleteBook, setModalBook } = useContext(BackContext);
 
   const handleDelete = () => {
@@ -56,4 +56,4 @@ function Author({ book }) {
   );
 }
 
-export default Author;
+export default Book;

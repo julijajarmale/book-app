@@ -8,15 +8,9 @@ const StarRating = ({book}) => {
   const { setRateNow} = useContext(BackContext);
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
-  const [ratingValue, setRatingValue] = useState(null);
-  
-  const rateIt = e => {
-    setRating(ratingValue);
-    setRateNow({
-        rate: parseInt(ratingValue),
-        id: book.id
-    });
-}
+ 
+
+
   
   return (
     <div>
@@ -24,7 +18,12 @@ const StarRating = ({book}) => {
 
         const ratingValue = i + 1;
         
-        
+        const rateIt = e => {
+          setRating(ratingValue);
+          setRateNow({
+              rate: parseInt(ratingValue),
+              id: book.id
+          });}
       
         
         return (
