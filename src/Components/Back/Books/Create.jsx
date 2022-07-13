@@ -120,6 +120,7 @@ function Create() {
                 type="file"
                 className="input"
                 onChange={doPhoto}
+                
               />
             </div>
             {bookCover ? (

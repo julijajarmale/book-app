@@ -25,6 +25,8 @@ function Back({show}) {
     const [editBook, setEditBook] = useState(null)
     const [modalBook, setModalBook] = useState(null)
 
+    const [rateNow, setRateNow] = useState(null);
+
 
     
 
@@ -97,7 +99,7 @@ useEffect(() => {
 
     // EDIT BOOK
     useEffect(() => {
-        console.log(editBook)
+        
         if (null === editBook) return;
         axios.put('http://localhost:3003/admin/books/' + editBook.id, editBook, authConfig())
             .then(res => {
@@ -105,6 +107,17 @@ useEffect(() => {
             })
            
     }, [editBook]);
+
+     // RATE CREATE
+    
+    useEffect(() => {
+        if (null === rateNow) return;
+        axios.put('http://localhost:3003/admin/balsuok/' + rateNow.id, rateNow)
+            .then(_ => {
+                setLastUpdate(Date.now());
+            })
+    }, [rateNow]);
+
 
 
     return (
@@ -120,7 +133,8 @@ useEffect(() => {
             setDeleteBook,
             setEditBook,
             setModalBook,
-            modalBook
+            modalBook,
+            setRateNow
 
            
         }}>
