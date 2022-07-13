@@ -26,6 +26,12 @@ function Nav() {
                                         color: 'crimson'
                                     } : null
                             }>Books</NavLink>
+                            <NavLink to="/" className="nav-link" style={
+                                ({ isActive }) =>
+                                    isActive ? {
+                                        color: 'crimson'
+                                    } : null
+                            }>Main Page</NavLink>
                               <Link to="/logout">Logout</Link>
                         </nav>
                     </div>

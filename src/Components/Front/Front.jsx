@@ -1,4 +1,5 @@
 import FrontContext from './FrontContext';
+import FrontNav from './Nav';
 
 
 function Front() {
@@ -8,7 +9,7 @@ function Front() {
         <FrontContext.Provider value={{
            
         }}>
-           <h1>Front</h1>
+           <FrontNav/>
         </FrontContext.Provider>
     )
 }
