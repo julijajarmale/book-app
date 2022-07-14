@@ -8,7 +8,7 @@ function BooksList() {
 
   return (
    
-        <div className="col-8 ">
+        <div className="col-8">
           <h2>List of Books</h2>
           <div className="book-list-group">
           <ul className="book-list">

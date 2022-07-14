@@ -7,8 +7,9 @@ function List() {
 
   return (
     
-        <div className="col-4 list-form">
+        <div className="col-4 ">
           <h2>List of Authors</h2>
+          <div className="list-form">
           <div className="list-group">
           <ul className="list-group-item">
             {authors
@@ -18,6 +19,7 @@ function List() {
               : null}
           </ul>
           </div>
+        </div>
         </div>
      
   );
