@@ -9,8 +9,8 @@ function Author({ author }) {
         ) : null}
       </div>
       <div className="content">
-        <span className="item">{author.name}</span>
-        <span className="item">{author.surname}</span>
+        <span className="item">{author.name} {author.surname}</span>
+       
       </div>
     </li>
   );

@@ -30,7 +30,7 @@ function Book({ book }) {
             <div className="outofstock">Out of stock</div>
           )}
         </span>
-        <span className="item">
+        <span className="star-item">
          <StarRating/>
         </span>
       </div>
