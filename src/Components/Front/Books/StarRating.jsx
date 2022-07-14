@@ -1,11 +1,11 @@
 import React from "react";
-import { useContext } from "react";
+
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
-import BackContext from "../BackContext";
+
 
 const StarRating = ({book}) => {
-  const { setRateNow} = useContext(BackContext);
+ 
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
  
@@ -18,12 +18,7 @@ const StarRating = ({book}) => {
 
         const ratingValue = i + 1;
         
-        const rateIt = e => {
-          setRating(ratingValue);
-          setRateNow({
-              rate: parseInt(ratingValue),
-              id: book.id
-          });}
+       
       
         
         return (
@@ -42,7 +37,7 @@ const StarRating = ({book}) => {
               color={ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
               onMouseEnter={() => setHover(ratingValue)}
               onMouseLeave={() => setHover(null)}
-              onChange={rateIt}
+              
             />
             
           </label>
@@ -50,7 +45,7 @@ const StarRating = ({book}) => {
          
         );
       })}
-       <small>Rating:{rating}</small>
+        <small>Rating:{rating}</small>
     </div>
   );
 };
