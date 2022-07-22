@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { authConfig } from '../../Functions/auth';
-import BooksSlider from './BooksSlider';
+import BooksSlider from './For You/BooksSlider';
 import FrontContext from './FrontContext';
 import FrontNav from './Nav';
 import List from './Books/List';
@@ -33,7 +33,11 @@ function Front() {
            authors
         }}>
            <FrontNav/>
+           <div className="container">
+                <div className="row">
            <BooksSlider/>
+           </div>
+           </div>
            <div className="container front-container">
                 <div className="row">
            <List/>

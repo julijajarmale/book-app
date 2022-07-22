@@ -1,5 +1,4 @@
 
-
 import StarRating from "./StarRating";
 
 function Book({ book }) {

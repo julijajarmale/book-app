@@ -605,7 +605,10 @@ h2 {
     display: grid;
     padding: 25px 40px 50px;
     background-color: #f6f7f9;
-    border-radius: 10px;
+    border-radius: 5px;
+  }
+  .book-list{
+    border-radius: 5px;
   }
 .book-list-item{
   margin-bottom: 15px;
@@ -669,5 +672,48 @@ star-item{
       }
     }
 
+    .slider-list{
+      margin-top:30px;
+      display:flex;
+      justify-content: space-between;
+
+      .slider-item{
+        display: flex;
+        width: 30%;
+        padding: 25px;
+        border-radius: 10px;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .slider-item1{
+        background:linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255, 252, 98, 0.89) 58%);
+      }
+
+      .slider-item2{
+        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(242, 172, 199, 0.792) 58%);
+      }
+
+      .slider-item3{
+        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(114, 193, 145, 0.582) 58%);
+      }
+      .slider-content{
+        display:felx;
+        flex-direction: column;
+        margin-top: 20px;
+        margin-left: 10px;
+       
+      }
+      .slider-a{
+        margin-bottom: 10px;
+      }
+    }
+
+    .slider-image{
+      img{
+      width: auto;
+      height: 200px;;
+      }
+    }
     
     

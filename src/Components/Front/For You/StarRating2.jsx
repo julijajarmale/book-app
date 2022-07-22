@@ -34,7 +34,7 @@ const StarRating = ({book}) => {
             />
             <FaStar
               className="star"
-              color={ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
+              color={ratingValue <= (hover || rating) ? "#ffc107" : "#fff"}
               onMouseEnter={() => setHover(ratingValue)}
               onMouseLeave={() => setHover(null)}
               
