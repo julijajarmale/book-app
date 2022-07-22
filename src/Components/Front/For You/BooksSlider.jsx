@@ -8,11 +8,12 @@ function BookSlider() {
 
 
   return (
-  
-        <div className="col-12">
-          <h2>For You</h2>
-          <div className="slider-list">
-            <div className="slider-item slider-item1">
+    <>
+  <div className ="col-12">  
+      <h2>For You</h2>
+      </div>
+        
+            <div className="slider-item slider-item1  col-12 col-md-hidden col-lg-4 ">
               <div className="slider-image">
                 <ForYou1/>
               </div>
@@ -23,7 +24,7 @@ function BookSlider() {
               </div>
 
             </div>
-            <div className="slider-item slider-item2">
+            <div className="slider-item slider-item2 col-12 col-md-6 col-lg-4">
               <div className="slider-image">
                 <ForYou2/>
               </div>
@@ -34,7 +35,7 @@ function BookSlider() {
               </div>
 
             </div>
-            <div className="slider-item slider-item3">
+            <div className="slider-item slider-item3 col-12 col-md-6 col-lg-4">
               <div className="slider-image">
                 <ForYou3/>
               </div>
@@ -48,9 +49,9 @@ function BookSlider() {
 
            
          
-          </div>
-        </div>
-       
+          
+        
+          </>
      
   );
 }
