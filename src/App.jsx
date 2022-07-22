@@ -74,6 +74,8 @@ function RequireAuth({ children,role}) {
         <div>Name: <input className="input" type="text" value={user} onChange={e => setUser(e.target.value)}></input></div>
         <div>Password: <input className="input" type="password" value={pass} onChange={e => setPass(e.target.value)}></input></div>
         <button className="btn" onClick={doLogin}>Log in</button>
+        <small>name: admin,  password: 123</small><br></br>
+        <small>name: user,  password: 123</small>
         </div>
       </div>
       </div>

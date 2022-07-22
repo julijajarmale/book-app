@@ -61,7 +61,7 @@ function Edit() {
           <label>Update Name</label>
           <input
             type="text"
-            className="form-row"
+            className="input"
             onChange={(e) => setName(e.target.value)}
             value={name}
           />
@@ -70,7 +70,7 @@ function Edit() {
           <label>Update Surname</label>
           <input
             type="text"
-            className="form-row"
+            className="input"
             onChange={(e) => setSurname(e.target.value)}
             value={surname}
           />
@@ -80,7 +80,7 @@ function Edit() {
           <input
             ref={fileInput}
             type="file"
-            className="form-control"
+            className="input"
             onChange={doPhoto}
           />
         </div>
@@ -91,7 +91,7 @@ function Edit() {
             </div>
           ) : null}
         </div>
-        <div className="modal-footer">
+        <div className="buttons">
           <button
             type="button"
             className="btn btn2"
