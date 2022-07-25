@@ -29,6 +29,7 @@ function Create() {
     setCreateAuthor(data);
     setName("");
     setSurname("");
+    setAuthorPicture(null);
   };
 
   return (

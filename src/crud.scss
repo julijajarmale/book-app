@@ -397,7 +397,7 @@ h2 {
   padding: 70px;
   border-radius: 20px;
   position: absolute;
-  top: 120%;
+  top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
@@ -484,11 +484,11 @@ h2 {
 
 .modal {
   width: 500px;
-  padding: 70px;
+  padding: 20px;
   border-radius: 20px;
   display: block;
   position: absolute;
-  top: 120%;
+  top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
