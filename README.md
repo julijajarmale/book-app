@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Some practice with API
 ![Screenshot](./screenshots/Screenshot_1)
 ![Screenshot](./screenshots/Screenshot_2.jpg)
@@ -6,6 +7,9 @@
 ![Screenshot](./screenshots/Screenshot_5.jpg)
 
 Site published at: 
+=======
+
+>>>>>>> ffe16bacab69f63b1d67b417a8171ca7d5af3712
 
 Design: Julija Ilginytė-Jarmalė
 
@@ -23,9 +27,12 @@ Design: Julija Ilginytė-Jarmalė
 Julija Ilginytė-Jarmalė: [Github](https://github.com/julijajarmale) [LinkedIn](https://www.linkedin.com/in/julija-ilginyte-jarmale/) 
 
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> ffe16bacab69f63b1d67b417a8171ca7d5af3712
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
