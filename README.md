@@ -1,12 +1,4 @@
 
-# Some practice with API
-![Screenshot](./screenshots/Screenshot_1)
-![Screenshot](./screenshots/Screenshot_2.jpg)
-![Screenshot](./screenshots/Screenshot_3.jpg)
-![Screenshot](./screenshots/Screenshot_4.jpg)
-![Screenshot](./screenshots/Screenshot_5.jpg)
-
-Site published at: 
 
 Design: Julija Ilginytė-Jarmalė
 
