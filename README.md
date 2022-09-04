@@ -1,12 +1,20 @@
 
+# Author and design
 
-# Some practice with API
+Julija Ilginytė-Jarmalė: [Github](https://github.com/julijajarmale) [LinkedIn](https://www.linkedin.com/in/julija-ilginyte-jarmale/) <br>
+
+# Book-app screenshots
 ![Screenshot](./screenshots/Screenshot_1.jpg)
 ![Screenshot](./screenshots/Screenshot_2.jpg)
 ![Screenshot](./screenshots/Screenshot_3.jpg)
 ![Screenshot](./screenshots/Screenshot_4.jpg)
 ![Screenshot](./screenshots/Screenshot_5.jpg)
 
+
+# Project features
+React.JS
+Express.JS
+HTML/CSS/JS
 Site published at: 
 
 Design: Julija Ilginytė-Jarmalė
