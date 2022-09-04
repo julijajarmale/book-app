@@ -1,3 +1,31 @@
+# Some practice with API
+![Screenshot](./screenshots/Screenshot_1)
+![Screenshot](./screenshots/Screenshot_2.jpg)
+![Screenshot](./screenshots/Screenshot_3.jpg)
+![Screenshot](./screenshots/Screenshot_4.jpg)
+![Screenshot](./screenshots/Screenshot_5.jpg)
+
+Site published at: 
+
+Design: Julija Ilginytė-Jarmalė
+
+## Project features
+
+- HTML/CSS/JS
+- React.js
+- Express.js
+- REST API
+- MySql
+
+
+## Author
+
+Julija Ilginytė-Jarmalė: [Github](https://github.com/julijajarmale) [LinkedIn](https://www.linkedin.com/in/julija-ilginyte-jarmale/) 
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
