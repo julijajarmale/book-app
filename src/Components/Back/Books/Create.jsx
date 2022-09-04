@@ -5,7 +5,6 @@ import setDateFormat from "../../../Functions/setDateFormat";
 import BackContext from "../BackContext";
 import BooksLogo from "./BooksImage";
 
-
 function Create() {
   const { authors, setCreateBook } = useContext(BackContext);
 
@@ -18,8 +17,6 @@ function Create() {
   const [bookCover, setBookCover] = useState(null);
   const [description, setDescription] = useState(null);
   //
-
-
 
   const doPhoto = () => {
     getBase64(fileInput.current.files[0])
@@ -36,7 +33,7 @@ function Create() {
       author: parseInt(author),
       date: date,
       photo: bookCover,
-      description
+      description,
     };
     setCreateBook(data);
     setTitle("");
@@ -46,7 +43,7 @@ function Create() {
     setDate(setDateFormat);
     setBookCover(null);
     fileInput.current.value = null;
-    setDescription("")
+    setDescription("");
   };
 
   return (
@@ -112,15 +109,12 @@ function Create() {
             </div>
 
             <div className="form-row">
-              <label>
-                Upload Cover Picture
-              </label>
+              <label>Upload Cover Picture</label>
               <input
                 ref={fileInput}
                 type="file"
                 className="input"
                 onChange={doPhoto}
-                
               />
             </div>
             {bookCover ? (

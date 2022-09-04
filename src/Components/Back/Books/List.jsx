@@ -2,7 +2,6 @@ import { useContext } from "react";
 import BackContext from "../BackContext";
 import Book from "./Book";
 
-
 function BooksList() {
   const { books } = useContext(BackContext);
 
@@ -12,13 +11,11 @@ function BooksList() {
         <div className="col-12">
           <h2>List of Books</h2>
           <div className="book-list-group">
-          <ul className="book-list">
-            {books
-              ? books.map((book) => (
-                  <Book key={book.id} book={book}></Book>
-                ))
-              : null}
-          </ul>
+            <ul className="book-list">
+              {books
+                ? books.map((book) => <Book key={book.id} book={book}></Book>)
+                : null}
+            </ul>
           </div>
         </div>
       </div>

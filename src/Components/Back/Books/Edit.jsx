@@ -11,11 +11,11 @@ function Edit() {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [inStock, setInStock] = useState(false);
-  const [author, setAuthor] = useState('');
+  const [author, setAuthor] = useState("");
   const [date, setDate] = useState("");
   const fileInput = useRef();
   const [bookCover, setBookCover] = useState(null);
-  const [description, setDescription] = useState('');
+  const [description, setDescription] = useState("");
 
   const doPhoto = () => {
     getBase64(fileInput.current.files[0])
@@ -40,8 +40,6 @@ function Edit() {
   }, [modalBook, authors]);
 
   const handleEdit = () => {
-  
-
     const data = {
       title,
       id: modalBook.id,
@@ -50,9 +48,9 @@ function Edit() {
       author: parseInt(author),
       date: date,
       photo: bookCover,
-      description
+      description,
     };
-console.log('data', data)
+    console.log("data", data);
     setEditBook(data);
     setModalBook(null);
   };
@@ -69,7 +67,9 @@ console.log('data', data)
           type="button"
           className="close"
           onClick={() => setModalBook(null)}
-        >x</button>
+        >
+          x
+        </button>
       </div>
       <div className="form modal-body">
         <div className="form-row">
@@ -108,14 +108,14 @@ console.log('data', data)
           />
         </div>
         <div className="form-row">
-              <input
-                type="text"
-                placeholder="Update Description"
-                className="input"
-                onChange={(e) => setDescription(e.target.value)}
-                value={description}
-              />
-            </div>
+          <input
+            type="text"
+            placeholder="Update Description"
+            className="input"
+            onChange={(e) => setDescription(e.target.value)}
+            value={description}
+          />
+        </div>
         <div className="form-row form-check">
           <label>In Stock?</label>
           <input
@@ -127,8 +127,8 @@ console.log('data', data)
           />
         </div>
         <div className="form-row form-check">
-        <label>Update Publish Date</label>
-       
+          <label>Update Publish Date</label>
+
           <input
             type="datetime-local"
             placeholder="Update Publish Date"
@@ -137,41 +137,38 @@ console.log('data', data)
             value={date}
           />
         </div>
-        
-      
-      <div className="form-row">
-        <label>Update Book cover</label>
-        <input
-          ref={fileInput}
-          type="file"
-          className="input"
-          onChange={doPhoto}
-        />
-      </div>
-      <div>
-        {bookCover ? (
-          <div className="book-cover">
-            <img src={bookCover} alt="nice" />
-          </div>
-        ) : null}
-      </div>
-      
 
-      <div className="buttons">
-        <button
-          type="button"
-          className="btn btn2"
-          onClick={() => setModalBook(null)}
-        >
-          Close
-        </button>
-        <button type="button" className="btn btn3" onClick={handleEdit}>
-          Save changes
-        </button>
+        <div className="form-row">
+          <label>Update Book cover</label>
+          <input
+            ref={fileInput}
+            type="file"
+            className="input"
+            onChange={doPhoto}
+          />
+        </div>
+        <div>
+          {bookCover ? (
+            <div className="book-cover">
+              <img src={bookCover} alt="nice" />
+            </div>
+          ) : null}
+        </div>
+
+        <div className="buttons">
+          <button
+            type="button"
+            className="btn btn2"
+            onClick={() => setModalBook(null)}
+          >
+            Close
+          </button>
+          <button type="button" className="btn btn3" onClick={handleEdit}>
+            Save changes
+          </button>
+        </div>
       </div>
     </div>
-    </div>
-    
   );
 }
 

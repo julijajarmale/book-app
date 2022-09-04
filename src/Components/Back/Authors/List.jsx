@@ -11,13 +11,13 @@ function List() {
         <div className="col-12 list-form">
           <h2>List of Authors</h2>
           <div className="list-group">
-          <ul className="list-group-item">
-            {authors
-              ? authors.map((author) => (
-                  <Author key={author.id} author={author}></Author>
-                ))
-              : null}
-          </ul>
+            <ul className="list-group-item">
+              {authors
+                ? authors.map((author) => (
+                    <Author key={author.id} author={author}></Author>
+                  ))
+                : null}
+            </ul>
           </div>
         </div>
       </div>

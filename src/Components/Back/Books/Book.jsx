@@ -40,7 +40,7 @@ function Book({ book }) {
           )}
         </span>
         <span className="item">
-         <StarRating/>
+          <StarRating />
         </span>
       </div>
 

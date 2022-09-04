@@ -15,17 +15,17 @@ function Create() {
 
   const doPhoto = () => {
     getBase64(fileInput.current.files[0])
-    .then(picture => setAuthorPicture(picture))
-    .catch(_ => {
+      .then((picture) => setAuthorPicture(picture))
+      .catch((_) => {
         // tylim
-    })
-  }
+      });
+  };
   const handleCreate = () => {
-    const data = { 
-      name, 
+    const data = {
+      name,
       surname,
-      picture: authorPicture
-     };
+      picture: authorPicture,
+    };
     setCreateAuthor(data);
     setName("");
     setSurname("");
@@ -56,26 +56,28 @@ function Create() {
                 onChange={(e) => setSurname(e.target.value)}
                 value={surname}
               />
-      
             </div>
             <div className="form-row">
-                    <label>Upload Authors Profile Picture</label>
-                    <input ref={fileInput} type="file" className="input" onChange={doPhoto}/>
-                </div>
-                {
-                    authorPicture ? <div className="photo-bin"><img src={authorPicture} alt="nice"/></div> : null
-                }
-            <button
-              type="button"
-              className="btn"
-              onClick={handleCreate}
-            >
+              <label>Upload Authors Profile Picture</label>
+              <input
+                ref={fileInput}
+                type="file"
+                className="input"
+                onChange={doPhoto}
+              />
+            </div>
+            {authorPicture ? (
+              <div className="photo-bin">
+                <img src={authorPicture} alt="nice" />
+              </div>
+            ) : null}
+            <button type="button" className="btn" onClick={handleCreate}>
               Create
             </button>
           </form>
         </div>
         <div className="col-6 ml-1">
-<AuthorLogo/>
+          <AuthorLogo />
         </div>
       </div>
     </div>
